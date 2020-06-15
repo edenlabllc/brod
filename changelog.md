@@ -1,3 +1,9 @@
+* 3.14.0
+  * Non backward-compatible change: brod_topic_subscriber,
+    brod_group_subscriber and brod_group_subscriber_v2 no longer
+    register consumers by default. Restart of brod application and all
+    brod workers is required due to changes in the internal state
+  * Typespec and documentation fixes
 * 3.13.0
   * Update supervisor3 dependency to 1.1.11
   * brod_group_subscriber_v2 behavior handles worker crashes
