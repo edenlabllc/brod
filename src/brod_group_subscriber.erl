@@ -353,6 +353,7 @@ handle_info(?LO_CMD_SUBSCRIBE_PARTITIONS, State) ->
   Tref = start_subscribe_timer(?undef, ?RESUBSCRIBE_DELAY),
   {noreply, NewState#state{subscribe_tref = Tref}};
 handle_info(Info, State) ->
+  brod_utils:log(info, "discarded message:~p", [Info]),
   log(State, info, "discarded message:~p", [Info]),
   {noreply, State}.
 
